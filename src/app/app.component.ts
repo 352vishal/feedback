@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Country} from '@angular-material-extensions/select-country'; 
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'feedback';
+
+  onCountrySelected(country: Country) {
+    console.log(country);
+  }
 }

@@ -22,7 +22,12 @@
     "@angular/platform-browser-dynamic": "^17.1.0",
     "@angular/router": "^17.1.0",
     "bootstrap": "^5.3.3",
+    "country-flags-svg": "^2.0.0-beta.1",
+    "intl-tel-input": "^17.0.21",
+    "ng2-tel-input": "^2.3.0",
+    "ngx-intl-tel-input": "^3.2.0",
     "rxjs": "~7.8.0",
+    "svg-country-flags": "^1.2.10",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
