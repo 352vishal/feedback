@@ -7,8 +7,4 @@ import {Country} from '@angular-material-extensions/select-country';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-
-  onCountrySelected(country: Country) {
-    console.log(country);
-  }
 }

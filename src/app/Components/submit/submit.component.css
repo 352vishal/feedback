@@ -1,0 +1,9 @@
+.thanks-page {
+    text-align: center;
+    padding: 70px 0;
+}
+.fa-solid, .fas {
+    font-weight: 900;
+    font-size: 60px;
+    color: green;
+}
