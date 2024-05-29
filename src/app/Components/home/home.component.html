@@ -1,10 +1,11 @@
 <div class="container">
 
-  <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()" #addData="ngForm" (ngSubmit)="submit(addData.value)">
     <div class="box">
       <nav class="navbar" style="background-color: white">
         <div class="container-fluid">
           <span class="navbar-brand mb-0 h1">Aromatic bar</span>
+          <p class="message-p">{{addUserMessage}}</p>
         </div>
       </nav>
   <div class="box-form">
@@ -164,7 +165,7 @@
   </div>
     </div>
 
-    <button class="btn btn-success">Submit Review</button>
+    <button class="btn btn-success" [disabled]="loginForm.invalid">Submit Review</button>
   </form>
  
 

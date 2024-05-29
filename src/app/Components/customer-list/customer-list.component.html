@@ -15,7 +15,7 @@
           />
         </div>
         <button style="border:none; padding: 4px; background-color: white;"><i class="fa-solid fa-rotate"></i></button>
-        <button type="button" class="btn btn-success">Add New</button>
+        <button type="button" class="btn btn-success" routerLink="">Add New</button>
       </div>
     </nav>
 
@@ -32,61 +32,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr style="text-align: center;">
+        <tr style="text-align: center;" *ngFor="let item of customerList">
           <th>   
             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           </th>
-          <td>Mark</td>
+          <td><a href="" style="text-decoration: none;">View Details</a></td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
           <td>Otto</td>
-          <td>mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td></td>
+          <td><a style="text-decoration: none; cursor: pointer;" (click)="deleteData(item.id)">Delete</a></td>
         </tr>
-        <tr style="text-align: center;">
-            <th>   
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              </th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>fat</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td></td>
-        </tr>
-        <tr style="text-align: center;">
-            <th>   
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              </th>
-          <td>Larry the Bird</td>
-          <td>twitter</td>
-          <td>Larry the Bird</td>
-          <td>twitter</td>
-          <td>Larry the Bird</td>
-          <td></td>
-        </tr>
-        <tr style="text-align: center;">
-            <th>   
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              </th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td></td>
-          </tr>
-          <tr style="text-align: center;">
-            <th>   
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              </th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td></td>
-          </tr>
       </tbody>
     </table>
   </div>

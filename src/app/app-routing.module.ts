@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     component:CustomerListComponent,
     path:"customer-list",
-  }
+  },
 ];
 
 @NgModule({
