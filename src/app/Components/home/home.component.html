@@ -8,30 +8,45 @@
         </div>
       </nav>
   
+      <!-- Form index -->
   
-      <div class="box-form">
+      <div class="box-form" [formGroup]="loginForm">
         <div class="row">
           <div class="col-6">
             <div class="mb-3">
               <label for="name" class="form-label">Customer Name <span class="stare">*</span></label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name">
+              <small *ngIf="name.invalid && (name.dirty || name.touched)" class="block p-error">
+                <div *ngIf="name.errors?.['required']">Name is required.</div>
+                <div *ngIf="name.errors?.['pattern']">Name should be valid</div>
+              </small>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name" pInputText formControlName="name" required>
             </div>
           </div>
           <div class="col-6">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Email <span class="stare">*</span></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
+              <div *ngIf="email.errors?.['required']">Email is required.</div>
+              <div *ngIf="email.errors?.['email']">Email should be valid</div>
+              </small>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"  pInputText formControlName="email" required>
             </div>
           </div>
           <div class="col-6">
             <div class="mb-3">
-              <label for="phone" class="form-label">Phone <span class="stare">*</span></label><br>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number">
+              <label for="exampleFormControlInput1" class="form-label">Phone <span class="stare">*</span></label>
+              <small *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="block p-error">
+              <div *ngIf="phone.errors?.['required']">Phone is required.</div>
+              <div *ngIf="phone.errors?.['pattern']">Phone should be valid</div>
+              </small>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number"  pInputText formControlName="phone" required>
             </div>
           </div>
           <div class="col-6">
-          
           </div>
+
+       <!-- CheckBox  -->
+
           <div class="col-6">
             <p>Please rate the quality of the service you received from your host. <span class="stare">*</span></p>
             <div class="check-box" >
@@ -61,7 +76,6 @@
               </div>
             </div>
           </div>
-  
           <div class="col-6">
            <p>Please rate the quality of your beverage. <span class="stare">*</span></p>
            <div class="check-box" >

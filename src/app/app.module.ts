@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatSelectCountryModule } from "@angular-material-extensions/select-country";
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './Components/home/home.component';
 import { CustomerListComponent } from './Components/customer-list/customer-list.component';
 import { SubmitComponent } from './Components/submit/submit.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SubmitComponent } from './Components/submit/submit.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatSelectCountryModule.forRoot('de')
+    MatSelectCountryModule.forRoot('de'),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ provideAnimationsAsync() ],
   bootstrap: [AppComponent]
