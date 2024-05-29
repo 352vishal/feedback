@@ -1,55 +1,80 @@
 <div class="container">
-  
-    <div class="box">
-  
-      <nav class="navbar" style="background-color: white">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Aromatic bar</span>
-        </div>
-      </nav>
-  
-      <!-- Form index -->
-  
-      <div class="box-form" [formGroup]="loginForm">
-        <div class="row">
-          <div class="col-6">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Name <span class="stare">*</span></label>
-              <small *ngIf="name.invalid && (name.dirty || name.touched)" class="block p-error">
-                <div *ngIf="name.errors?.['required']">Name is required.</div>
-                <div *ngIf="name.errors?.['pattern']">Name should be valid</div>
-              </small>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name" pInputText formControlName="name" required>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email <span class="stare">*</span></label>
-              <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
-              <div *ngIf="email.errors?.['required']">Email is required.</div>
-              <div *ngIf="email.errors?.['email']">Email should be valid</div>
-              </small>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"  pInputText formControlName="email" required>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Phone <span class="stare">*</span></label>
-              <small *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="block p-error">
-              <div *ngIf="phone.errors?.['required']">Phone is required.</div>
-              <div *ngIf="phone.errors?.['pattern']">Phone should be valid</div>
-              </small>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number"  pInputText formControlName="phone" required>
-            </div>
-          </div>
-          <div class="col-6">
-          </div>
 
-       <!-- CheckBox  -->
-
-          <div class="col-6">
-            <p>Please rate the quality of the service you received from your host. <span class="stare">*</span></p>
-            <div class="check-box" >
+      <form class="box-form" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div class="box">
+          <nav class="navbar" style="background-color: white">
+            <div class="container-fluid">
+              <span class="navbar-brand mb-0 h1">Aromatic bar</span>
+            </div>
+          </nav>
+          <div class="row"> 
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="name" class="form-label">Customer Name <span class="stare">*</span></label>
+                <small *ngIf="name.invalid && (name.dirty || name.touched)" class="block p-error">
+                  <div *ngIf="name.errors?.['required']">Name is required.</div>
+                  <div *ngIf="name.errors?.['pattern']">Name should be valid</div>
+                </small>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name" pInputText formControlName="name" required>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email <span class="stare">*</span></label>
+                <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
+                <div *ngIf="email.errors?.['required']">Email is required.</div>
+                <div *ngIf="email.errors?.['email']">Email should be valid</div>
+                </small>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"  pInputText formControlName="email" required>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Phone <span class="stare">*</span></label>
+                <small *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="block p-error">
+                <div *ngIf="phone.errors?.['required']">Phone is required.</div>
+                <div *ngIf="phone.errors?.['pattern']">Phone should be valid</div>
+                </small>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number"  pInputText formControlName="phone" required>
+              </div>
+            </div>
+            <div class="col-6">
+            </div>
+  
+         <!-- CheckBox  -->
+  
+            <div class="col-6">
+              <p>Please rate the quality of the service you received from your host. <span class="stare">*</span></p>
+              <div class="check-box" >
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
+                  <label class="form-check-label" for="defaultCheck1">
+                    Excellent
+                  </label>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
+                  <label class="form-check-label" for="defaultCheck1">
+                    Good
+                  </label>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
+                  <label class="form-check-label" for="defaultCheck1">
+                    Fair
+                  </label>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
+                  <label class="form-check-label" for="defaultCheck1">
+                    Bad
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+             <p>Please rate the quality of your beverage. <span class="stare">*</span></p>
+             <div class="check-box" >
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
                 <label class="form-check-label" for="defaultCheck1">
@@ -74,40 +99,40 @@
                   Bad
                 </label>
               </div>
+             </div><br><br>
             </div>
-          </div>
-          <div class="col-6">
-           <p>Please rate the quality of your beverage. <span class="stare">*</span></p>
-           <div class="check-box" >
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
-              <label class="form-check-label" for="defaultCheck1">
-                Excellent
-              </label>
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
-              <label class="form-check-label" for="defaultCheck1">
-                Good
-              </label>
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
-              <label class="form-check-label" for="defaultCheck1">
-                Fair
-              </label>
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
-              <label class="form-check-label" for="defaultCheck1">
-                Bad
-              </label>
+            <div class="col-6">
+              <p>Was our restaurant clean? <span class="stare">*</span></p>
+              <div class="check-box">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
+                  <label class="form-check-label" for="defaultCheck1">
+                    Excellent
+                  </label>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
+                  <label class="form-check-label" for="defaultCheck1">
+                    Good
+                  </label>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
+                  <label class="form-check-label" for="defaultCheck1">
+                    Fair
+                  </label>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
+                  <label class="form-check-label" for="defaultCheck1">
+                    Bad
+                  </label>
+                </div>
+               </div>
             </div>
-           </div><br><br>
-          </div>
-          <div class="col-6">
-            <p>Was our restaurant clean? <span class="stare">*</span></p>
-            <div class="check-box">
+            <div class="col-6">
+             <p>Please rate your overall dining experience. <span class="stare">*</span></p>
+             <div class="check-box">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
                 <label class="form-check-label" for="defaultCheck1">
@@ -133,46 +158,12 @@
                 </label>
               </div>
              </div>
-          </div>
-          <div class="col-6">
-           <p>Please rate your overall dining experience. <span class="stare">*</span></p>
-           <div class="check-box">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
-              <label class="form-check-label" for="defaultCheck1">
-                Excellent
-              </label>
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
-              <label class="form-check-label" for="defaultCheck1">
-                Good
-              </label>
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
-              <label class="form-check-label" for="defaultCheck1">
-                Fair
-              </label>
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;
-              <label class="form-check-label" for="defaultCheck1">
-                Bad
-              </label>
             </div>
-           </div>
           </div>
         </div>
-  
-      </div>
-   
-    </div>
-  
-    <div class="submit-btn">
-      <button type="button" class="btn btn-success" routerLink="submit">Submit Review</button>
-    </div>
-    
+        <button class="btn btn-success">Submit Review</button>
+      </form>
+
   </div>
   
   

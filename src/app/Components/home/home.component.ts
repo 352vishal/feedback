@@ -15,9 +15,11 @@ export class HomeComponent implements OnInit {
     phone: ['',[Validators. required, Validators. pattern("^((\\+91-?) |0)?[0-9]{10}$")]],
   })
 
-  constructor(
-    private fb: FormBuilder,
-  ) { }
+  constructor(private fb: FormBuilder ) { }
+  
+  loginUser(){
+    console.warn(this.loginForm.value)
+  }
 
   get name() {
     return this.loginForm.controls['name'];
