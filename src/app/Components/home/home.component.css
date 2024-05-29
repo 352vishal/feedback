@@ -1,6 +1,6 @@
 .box {
     border: 1px solid;
-    padding: 25px;
+    padding: 12px;
     margin: 5px;
     border-radius: 12px;
     background-color: #f8f9fa;
@@ -14,7 +14,7 @@
 p {
     font-weight: 500;
 }
-.box-form button {
+button {
     position: absolute;
     left: 81%;
     margin: 40px 0px 20px 0px;
@@ -29,7 +29,7 @@ p {
 /* Media Queries */
 
  @media screen and (max-width: 992px) {
-    .box-form button{
+    button {
         position: static;
         margin: 40px 0px 20px 0px;
     }
