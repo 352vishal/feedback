@@ -26,6 +26,9 @@ button {
     display: flex;
 }
 
+.message-p{
+color: #0095b6;
+}
 /* Media Queries */
 
  @media screen and (max-width: 992px) {

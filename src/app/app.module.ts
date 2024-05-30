@@ -11,6 +11,7 @@ import { CustomerListComponent } from './Components/customer-list/customer-list.
 import { SubmitComponent } from './Components/submit/submit.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatSelectCountryModule.forRoot('de'),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TableModule
   ],
   providers: [ provideAnimationsAsync() ],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { data } from '../../data-type';
+import { Data } from '../../data-type';
+import { Router } from '@angular/router';
 import { DataService } from '../../Services/data.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class HomeComponent {
     phone: ['',[Validators. required, Validators. pattern("^((\\+91-?) |0)?[0-9]{10}$")]],
   })
 
-  constructor(private fb: FormBuilder, private data: DataService ) { }
+  constructor(private fb: FormBuilder, private data: DataService,private router: Router ) { }
   
   loginUser(){
     console.warn(this.loginForm.value)
@@ -34,16 +35,17 @@ export class HomeComponent {
     return this.loginForm.controls['phone'];
   }
 
-  submit(data: data) {
+  submit(data: Data) {
     this.data.addData(data).subscribe((result) => {
       // console.warn(result)
       if (result) {
-        this.addUserMessage = 'Your Data is added successfully';
+        this.addUserMessage = 'Thank you for completing the information';
       }
     });
 
     setTimeout(() => {
       this.addUserMessage = undefined
+      this.router.navigate(['/customer-list'])
     }, 3000);
 
   }

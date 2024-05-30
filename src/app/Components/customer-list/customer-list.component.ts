@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../Services/data.service';
-import { data } from '../../data-type';
+import { Data } from '../../data-type';
 
 @Component({
   selector: 'app-customer-list',
@@ -9,9 +9,14 @@ import { data } from '../../data-type';
 })
 export class CustomerListComponent implements OnInit{
 
-  customerList: undefined | data[];
+  customerList: undefined | Data[];
 
-  constructor( private data: DataService ){}
+  customerBox = [
+    { selected: false }, 
+  ];
+
+
+  constructor( private dataservices: DataService ){}
 
   ngOnInit(): void {
     this.list();
@@ -19,7 +24,7 @@ export class CustomerListComponent implements OnInit{
 
   deleteData(id: number) {
     if(confirm(" Do you want to delete ?"))
-    this.data.deleteData(id).subscribe((result) => {
+    this.dataservices.deleteData(id).subscribe((result) => {
       if (result) {
         this.list();
       }
@@ -27,11 +32,17 @@ export class CustomerListComponent implements OnInit{
   }
 
   list(){
-     this.data.customersList().subscribe((result) => {
+     this.dataservices.customersList().subscribe((result) => {
       if (result) {
         this.customerList = result
       }
     })
   }
+
+  boxValue(event:any) {
+    const checked = event.target.checked;
+    this.customerBox.forEach(item => item.selected = checked);
+  }
+
 
 }

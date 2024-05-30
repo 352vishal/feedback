@@ -19,10 +19,12 @@
       </div>
     </nav>
 
-    <table class="table table-bordered">
+    <table class="table table-bordered" *ngFor="let box of customerBox">
       <thead>
-        <tr style="text-align: center;">
-          <th scope="col"><i class="fa-solid fa-square-check"></i></th>
+        <tr style="text-align: center;" >
+          <th scope="col">
+            <input type="checkbox" name="customer" [value]="customerBox" (change)="boxValue($event)">
+          </th>
           <th scope="col">Form Details</th>
           <th scope="col">Customer Name</th>
           <th scope="col">Email</th>
@@ -34,7 +36,7 @@
       <tbody>
         <tr style="text-align: center;" *ngFor="let item of customerList">
           <th>   
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <input type="checkbox" name="customer" [checked]="box.selected" >
           </th>
           <td><a href="" style="text-decoration: none;">View Details</a></td>
           <td>{{item.name}}</td>
@@ -49,4 +51,5 @@
   <div class="delete-btn">
     <button type="button" class="btn btn-danger">Delete</button>
 </div>
+
 </div>
