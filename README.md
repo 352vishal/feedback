@@ -4,10 +4,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Create a feedback form for a restaurant with the following questions and layout details.
 
+This Project Created in Angular
+Langurges Used is:
+html,
+css,
+ts
+Server Used for local Data Store:
+json server 
 
 # Project Setup 
+Step 1: Angulare 
 
-Step 1: clone the project: `git clone`
+Step 2: clone the project: `git clone`
 `https://github.com/352vishal/feedback`
 
 Step 3: `git pull origin develop` or `master`
