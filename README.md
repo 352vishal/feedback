@@ -1,27 +1,34 @@
-# Feedback
+# Vclick Angular Ecommerce 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
-## Development server
+Create a feedback form for a restaurant with the following questions and layout details.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Project Setup 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Step 1: clone the project: `git clone`
+`https://github.com/352vishal/feedback`
 
-## Build
+Step 3: `git pull origin develop` or `master`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Step 4: Install Node form https://nodejs.org/en/
 
-## Running unit tests
+Step 5: `npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Step 6: `npm install -g json-server` (Install JSON mock server)
 
-## Running end-to-end tests
+Step 7: `npm install -g @angular/cli`  (Install angular CLI)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Step 8: Open two terminal/command prompt
 
-## Further help
+Step 9: In one run command: `ng serve`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Step 10: Another one run command: `npx json-server db.json`
+
+Now you can ready to go
+
+Step 11: Open your browser and type: http://localhost:4200
+
+If you want to see the api on your browser you can hit the link: http://localhost:3000/
+
